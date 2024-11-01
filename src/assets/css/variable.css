@@ -1,0 +1,64 @@
+/* color */
+:root {
+  /* primary */
+  --color-primary: #4265ed;
+  --color-primary-medium: #3554cc;
+  --color-primary-dark: #1e2c65;
+  --color-primary-light: #f6f9fc;
+  --color-primary-semiLight: #8cadff;
+  --color-primary-semi: #e1eaff;
+
+  /* gray */
+  --color-gray-100: #f7f7f7;
+  --color-gray-200: #ededed;
+  --color-gray-300: #d9d9d9;
+  --color-gray-400: #cccccc;
+  --color-gray-500: #c0c0c0;
+  --color-gray-600: #868686;
+  --color-gray-700: #777777;
+  --color-gray-800: #555555;
+  --color-gray-900: #2a2a2a;
+
+  --color-white: #fff;
+  --color-black: #000;
+
+  /* success */
+  --color-success: #28a745;
+  --color-success-dark: #117428;
+  --color-success-light: #cfebd6;
+
+  /* danger */
+  --color-danger: #dc3545;
+  --color-danger-dark: #ac1c2a;
+  --color-danger-light: #fddee1;
+
+  /* warning */
+  --color-warning: #ffc107;
+  --color-warning-dark: #ce9b00;
+  --color-warning-light: #ffeaac;
+
+  /* info */
+  --color-info: #17a2b8;
+  --color-info-dark: #127888;
+  --color-info-light: #d5ecf0;
+}
+
+/* Extra small devices (phones, 576px and down) */
+@media only screen and (max-width: 576px) {
+}
+
+/* Small devices (portrait tablets and large phones, 576px and up) */
+@media only screen and (min-width: 576px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {
+} */
