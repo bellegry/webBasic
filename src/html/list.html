@@ -5,41 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>W3C Patterns</title>
     <link rel="stylesheet" href="../assets/css/default.css" />
+    <link rel="stylesheet" href="../assets/css/list.css" />
+    <script type="module" src="../js/layout.js" defer></script>
     <script type="module" src="../js/list.js" defer></script>
   </head>
   <body>
-    <div class="container">
-      <div class="section">
-        <div role="table" aria-label="Students" aria-describedby="students_table_desc">
-          <div id="students_table_desc">W3C Components List</div>
-          <div role="rowgroup">
-            <div role="row">
-              <span role="columnheader">Components List</span>
-              <span role="columnheader">Link</span>
-            </div>
-          </div>
-          <div role="rowgroup">
-            <div role="row">
-              <span role="cell">Accordion</span>
-              <span role="cell">
-                <div tabindex="0" role="button" id="btn-accordicon">click</div>
-              </span>
-            </div>
-            <div role="row">
-              <span role="cell">Sara</span>
-              <span role="cell">James</span>
-            </div>
-            <div role="row">
-              <span role="cell">Ralph</span>
-              <span role="cell">Jefferson</span>
-            </div>
-            <div role="row">
-              <span role="cell">Nancy</span>
-              <span role="cell">Jensen</span>
+    <header></header>
+    <div class="snb"></div>
+    <main>
+      <section>
+        <div class="container">
+          <div class="section">
+            <div role="table" aria-label="Students" aria-describedby="students_table_desc">
+              <div id="students_table_desc">W3C Components List</div>
+              <div role="rowgroup">
+                <div role="row">
+                  <span role="columnheader">Components List</span>
+                  <span role="columnheader">Link</span>
+                </div>
+              </div>
+              <div role="rowgroup">
+                <div role="row">
+                  <span role="cell">Accordion</span>
+                  <span role="cell">
+                    <div tabindex="0" role="button" id="btn-accordicon">click</div>
+                  </span>
+                </div>
+                <div role="row">
+                  <span role="cell">Sara</span>
+                  <span role="cell">James</span>
+                </div>
+                <div role="row">
+                  <span role="cell">Ralph</span>
+                  <span role="cell">Jefferson</span>
+                </div>
+                <div role="row">
+                  <span role="cell">Nancy</span>
+                  <span role="cell">Jensen</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
+    <footer></footer>
   </body>
 </html>

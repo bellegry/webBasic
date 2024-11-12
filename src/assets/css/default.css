@@ -6,9 +6,6 @@
 @import url(./icons.css);
 @import url(./variable.css);
 
-/* page */
-@import url(./main.css);
-
 /* components */
-@import url(./components/accordion.css);
-@import url(./components/table.css);
+@import url(./global.css);
+@import url(./layout.css);

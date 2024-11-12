@@ -1,0 +1,43 @@
+html {
+  font-family: "Pretendard";
+  font-weight: var(--font-weight-Regular);
+  font-size: 62.5%;
+  color: var(--color-gray-800);
+  body {
+    font-size: var(--font-size-m);
+  }
+}
+
+h1 {
+  font-weight: var(--font-weight-black);
+  font-size: 3.6rem;
+  color: var(--color-);
+}
+h2 {
+  font-weight: var(--font-weight-extraBold);
+  font-size: var(--font-size-xxl);
+}
+h3 {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xl);
+}
+h4 {
+  font-weight: var(--font-weight-semiBold);
+  font-size: var(--font-size-l);
+}
+
+/* Extra small devices (phones, 576px and down) */
+/* @media only screen and (max-width: 576px) {
+} */
+
+/* Small devices (portrait tablets and large phones, 576px and up) */
+/* @media only screen and (min-width: 576px) {
+} */
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {
+} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {
+} */

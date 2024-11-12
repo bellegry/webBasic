@@ -41,24 +41,46 @@
   --color-info: #17a2b8;
   --color-info-dark: #127888;
   --color-info-light: #d5ecf0;
-}
 
-/* Extra small devices (phones, 576px and down) */
-@media only screen and (max-width: 576px) {
-}
+  /* font-size */
+  --font-size-xxl: 2.8rem;
+  --font-size-xl: 2.4rem;
+  --font-size-l: 2rem;
+  --font-size-m: 1.6rem;
+  --font-size-s: 1.4rem;
+  --font-size-xs: 1.2rem;
+  --font-size-xxs: 1rem;
 
-/* Small devices (portrait tablets and large phones, 576px and up) */
-@media only screen and (min-width: 576px) {
-}
+  /* font weight */
+  --font-weight-black: 900;
+  --font-weight-extraBold: 800;
+  --font-weight-bold: 700;
+  --font-weight-semiBold: 600;
+  --font-weight-medium: 500;
+  --font-weight-Regular: 400;
+  --font-weight-light: 300;
+  --font-weight-extraLight: 200;
+  --font-weight-thin: 100;
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-}
+  /* radius */
+  --radius-fill: 80rem;
+  --radius-xxl: 3.2rem;
+  --radius-xl: 1.6rem;
+  --radius-l: 1.2rem;
+  --radius-m: 1rem;
+  --radius-s: 0.8rem;
+  --radius-xs: 0.6rem;
+  --radius-xxs: 0.4rem;
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+  /* spacing */
+  --spacing-30: 3rem;
+  --spacing-28: 2.8rem;
+  --spacing-24: 2.4rem;
+  --spacing-20: 2rem;
+  --spacing-16: 1.6rem;
+  --spacing-12: 1.2rem;
+  --spacing-10: 1rem;
+  --spacing-8: 0.8rem;
+  --spacing-6: 0.6rem;
+  --spacing-4: 0.4rem;
 }
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-/* @media only screen and (min-width: 1200px) {
-} */
