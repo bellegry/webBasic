@@ -9,7 +9,7 @@ html {
       margin: 0 auto;
       width: 100%;
       max-width: 1200px;
-      min-height: calc(100vh - (70px + 60px + 120px + 2px));
+      min-height: calc(100vh - (70px + 120px + 2px));
       padding: var(--spacing-30);
     }
   }
@@ -18,7 +18,6 @@ html {
 h1 {
   font-weight: var(--font-weight-black);
   font-size: 3.6rem;
-  color: var(--color-);
 }
 h2 {
   font-weight: var(--font-weight-extraBold);
@@ -32,19 +31,3 @@ h4 {
   font-weight: var(--font-weight-semiBold);
   font-size: var(--font-size-l);
 }
-
-/* Extra small devices (phones, 576px and down) */
-/* @media only screen and (max-width: 576px) {
-} */
-
-/* Small devices (portrait tablets and large phones, 576px and up) */
-/* @media only screen and (min-width: 576px) {
-} */
-
-/* Medium devices (landscape tablets, 768px and up) */
-/* @media only screen and (min-width: 768px) {
-} */
-
-/* Large devices (laptops/desktops, 992px and up) */
-/* @media only screen and (min-width: 992px) {
-} */

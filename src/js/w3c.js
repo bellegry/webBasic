@@ -1,16 +1,12 @@
+// active 함수 불러오기
+import { removeActive, addActive } from "./active.js";
+
 const snbNav = document.querySelector(".snb");
 // nodelist아니고 array로 변환해서 사용
 const w3cArray = Array.from(snbNav.querySelectorAll("li"));
 let activeItem = snbNav.querySelector("li.active");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
-
-// active 제거 함수
-const removeActive = () => {
-  if (activeItem) {
-    activeItem.classList.remove("active");
-  }
-};
 
 // 페이지 로드 함수
 const pageLoad = (el) => {
@@ -63,8 +59,8 @@ async function loadComponent(tag, path) {
 
 // active 업데이트 함수
 const updateActive = (el) => {
-  removeActive(); // 기존 active 제거
-  el.classList.add("active"); // 새 active 추가
+  removeActive(activeItem); // 기존 active 제거
+  addActive(el);
   activeItem = el; // activeItem 업데이트
   pageLoad(el); // 페이지 로드
 };

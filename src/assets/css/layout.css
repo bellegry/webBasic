@@ -10,62 +10,30 @@ header {
     color: var(--color-white);
     padding: 0 var(--spacing-10);
   }
-  nav ul {
-    display: flex;
-    gap: var(--spacing-20);
-    li {
-      color: var(--color-primary-semiLight);
-      &:active,
-      &:hover {
-        color: var(--color-white);
-      }
-      &:disabled {
+  nav {
+    .material-icons {
+      display: none;
+    }
+    ul {
+      display: flex;
+      gap: var(--spacing-10);
+      li button {
+        padding: var(--spacing-6);
         color: var(--color-primary-semiLight);
+        &.active,
+        &:hover {
+          color: var(--color-white);
+        }
+        &:disabled {
+          color: var(--color-primary-semiLight);
+        }
       }
     }
   }
 }
 
 .snb {
-  background-color: var(--color-white);
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--color-gray-200);
-  nav {
-    width: calc(100% - 140px);
-    overflow: hidden;
-    ul {
-      display: flex;
-      align-items: center;
-      height: 60px;
-      li {
-        align-items: center;
-        height: 100%;
-        line-height: 60px;
-        padding: 0 var(--spacing-30);
-        &:hover,
-        &.active {
-          color: var(--color-primary);
-          border-bottom: solid 1px var(--color-primary);
-        }
-      }
-    }
-  }
-  .pagination {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-shrink: 0;
-    height: 60px;
-    button {
-      width: 60px;
-      height: 100%;
-      border-left: 1px solid var(--color-gray-200);
-      color: var(--color-gray-600);
-    }
-  }
+  display: none;
 }
 
 footer {
@@ -89,4 +57,46 @@ footer {
       font-size: var(--font-size-xs);
     }
   }
+}
+
+/* Extra small devices (phones, 576px and down) */
+@media only screen and (max-width: 576px) {
+  header {
+    position: relative;
+    nav {
+      .material-icons {
+        display: block;
+        font-size: var(--font-size-xxl);
+        color: var(--color-white);
+      }
+      ul {
+        display: block;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        height: calc(100vh - (70px + 120px + 2px));
+        padding: var(--spacing-30);
+        padding-bottom: 10%;
+        border-top: 1px solid var(--color-primary-semiLight);
+        background-color: var(--color-primary);
+        li {
+          padding: var(--spacing-10) 0;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 576px and up) */
+@media only screen and (min-width: 576px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
 }

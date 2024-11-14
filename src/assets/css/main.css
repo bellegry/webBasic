@@ -1,6 +1,10 @@
-.container {
+section {
   width: 100%;
-  font-size: var(--font-size-xxl);
-  font-weight: var(--font-weight-black);
   text-align: center;
+  .container {
+    padding: 170px 0;
+    p {
+      color: var(--color-gray-600);
+    }
+  }
 }
