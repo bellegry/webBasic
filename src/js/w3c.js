@@ -1,11 +1,12 @@
 const snbNav = document.querySelector(".snb");
 const w3cArray = snbNav.querySelectorAll("li");
+let activeItem = snbNav.querySelector("li.active");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 
 // active 제거 함수
 const removeActive = () => {
-  const activeItem = snbNav.querySelector("li.active");
+  activeItem = snbNav.querySelector("li.active");
   if (activeItem) {
     activeItem.classList.remove("active");
   }
@@ -18,23 +19,28 @@ const pageLoad = (el) => {
   loadComponent(".pattern", url);
 };
 
-// // < 버튼 클릭 이벤트
-// prevBtn?.addEventListener("click", () => {
-//   const liActive = snbNav.querySelector("li.active");
-//   if (liActive && liActive.previousElementSibling) {
-//     const prevEl = liActive.previousElementSibling;
-//     updateActive(prevEl);
-//   }
-// });
+// < 버튼 클릭 이벤트
+prevBtn.addEventListener("click", () => {
+  activeItem = snbNav.querySelector("li.active");
+  if (activeItem && activeItem.previousElementSibling) {
+    const prevEl = activeItem.previousElementSibling;
+    console.log(prevEl);
+    updateActive(prevEl);
+  } else {
+    console.log("이놈이 첫번째야");
+  }
+});
 
-// // > 버튼 클릭 이벤트
-// nextBtn?.addEventListener("click", () => {
-//   const liActive = snbNav.querySelector("li.active");
-//   if (liActive && liActive.nextElementSibling) {
-//     const nextEl = liActive.nextElementSibling;
-//     updateActive(nextEl);
-//   }
-// });
+// > 버튼 클릭 이벤트
+nextBtn.addEventListener("click", () => {
+  activeItem = snbNav.querySelector("li.active");
+  if (activeItem && activeItem.nextElementSibling) {
+    const nextEl = activeItem.nextElementSibling;
+    updateActive(nextEl);
+  } else {
+    console.log("이놈이 제일 마지막임");
+  }
+});
 
 // w3c.html 내용을 태그에 삽입
 function loadComponent(tag, path) {
