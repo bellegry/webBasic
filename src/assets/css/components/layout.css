@@ -17,7 +17,7 @@ header {
     ul {
       display: flex;
       gap: var(--spacing-10);
-      li button {
+      li a {
         padding: var(--spacing-6);
         color: var(--color-primary-semiLight);
         &.active,
@@ -25,7 +25,7 @@ header {
           color: var(--color-white);
         }
         &:disabled {
-          color: var(--color-primary-semiLight);
+          color: var(--color-primary-semi);
         }
       }
     }
