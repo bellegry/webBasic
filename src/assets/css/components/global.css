@@ -21,13 +21,13 @@ h1 {
 }
 h2 {
   font-weight: var(--font-weight-extraBold);
-  font-size: var(--font-size-xxl);
+  font-size: var(--font-size-xl);
 }
 h3 {
   font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-l);
 }
 h4 {
-  font-weight: var(--font-weight-semiBold);
-  font-size: var(--font-size-l);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-ml);
 }

@@ -1,9 +1,9 @@
 .accordion {
   margin: 0;
   padding: 0;
-  border: 2px solid hsl(0deg 0% 52%);
-  border-radius: 7px;
-  width: 20em;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-xs);
+  width: 40rem;
 }
 
 .accordion h3 {
@@ -12,38 +12,35 @@
 }
 
 .accordion:focus-within {
-  border-color: hsl(216deg 94% 43%);
+  border-color: var(--color-gray-200);
 }
 
 .accordion:focus-within h3 {
-  background-color: hsl(0deg 0% 97%);
+  background-color: var(--color-gray-200);
 }
 
 .accordion > * + * {
-  border-top: 1px solid hsl(0deg 0% 52%);
+  border-top: 1px solid var(--color-gray-200);
 }
 
 .accordion-trigger {
-  background: none;
-  color: hsl(0deg 0% 13%);
   display: block;
-  font-size: 1rem;
   font-weight: normal;
   margin: 0;
-  padding: 1em 1.5em;
+  padding: var(--spacing-6);
   position: relative;
   text-align: left;
   width: 100%;
-  outline: none;
 }
 
 .accordion-trigger:focus,
 .accordion-trigger:hover {
-  background: hsl(216deg 94% 94%);
+  background: var(--color-primary-semi);
+  color: var(--color-primary);
 }
 
 .accordion-trigger:focus {
-  outline: 4px solid transparent;
+  outline: 1px solid var(--color-gray-200);
 }
 
 .accordion > *:first-child .accordion-trigger,
@@ -74,24 +71,25 @@ button {
 }
 
 .accordion-trigger:focus .accordion-title {
-  border-color: hsl(216deg 94% 43%);
+  /* border-color: var(--color-primary-semiLight); */
+  color: var(--color-primary);
 }
 
 .accordion-icon {
   border: solid currentcolor;
   border-width: 0 2px 2px 0;
-  height: 0.5rem;
+  height: 1rem;
   pointer-events: none;
   position: absolute;
   right: 2em;
   top: 50%;
   transform: translateY(-60%) rotate(45deg);
-  width: 0.5rem;
+  width: 1rem;
 }
 
 .accordion-trigger:focus .accordion-icon,
 .accordion-trigger:hover .accordion-icon {
-  border-color: hsl(216deg 94% 43%);
+  border-color: var(--color-primary);
 }
 
 .accordion-trigger[aria-expanded="true"] .accordion-icon {
@@ -112,12 +110,21 @@ fieldset {
   border: 0;
   margin: 0;
   padding: 0;
+  label {
+    color: var(--color-gray-600);
+  }
 }
 
 input {
-  border: 1px solid hsl(0deg 0% 42%);
-  border-radius: 0.3em;
+  width: 100%;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--spacing-6);
   display: block;
   font-size: inherit;
-  padding: 0.3em 0.5em;
+  padding: var(--spacing-6);
+  margin-bottom: var(--spacing-10);
+  outline: none;
+  &:focus {
+    border: 1px solid var(--color-primary-semiLight);
+  }
 }

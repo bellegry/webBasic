@@ -30,6 +30,8 @@ prevBtn.addEventListener("click", () => {
     updateActive(prevEl);
   } else {
     console.log("이놈이 첫번째임");
+    const prevEl = activeItem.parentElement.lastElementChild;
+    updateActive(prevEl);
   }
 });
 
@@ -40,5 +42,7 @@ nextBtn.addEventListener("click", () => {
     updateActive(nextEl);
   } else {
     console.log("이놈이 마지막임");
+    const prevEl = activeItem.parentElement.firstElementChild;
+    updateActive(prevEl);
   }
 });

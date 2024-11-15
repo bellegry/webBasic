@@ -6,6 +6,7 @@ function getPath() {
 }
 
 const currentFileName = getPath();
+console.log(currentFileName);
 
 // MutationObserver를 사용하여 header 내에서 동적으로 요소를 감지하고 active 추가
 document.addEventListener("DOMContentLoaded", () => {
