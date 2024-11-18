@@ -1,3 +1,5 @@
+import { addActive } from "../layout.js";
+
 // URL에서 파일명을 추출하는 함수
 function getPath() {
   const path = window.location.pathname; // 전체 경로 추출
@@ -8,23 +10,21 @@ function getPath() {
 const currentFileName = getPath();
 console.log(currentFileName);
 
-// MutationObserver를 사용하여 header 내에서 동적으로 요소를 감지하고 active 추가
-document.addEventListener("DOMContentLoaded", () => {
-  const head = document.querySelector("header");
+// setTimeout으로 header nav에 active
+const headNav = document.querySelector("header nav");
 
-  // MutationObserver 설정
-  const observer = new MutationObserver((mutationsList, observer) => {
-    const className = head.querySelector(`.${currentFileName}`); // currentFileName 클래스 선택
-    console.log(className);
-    if (className) {
-      className.classList.add("active"); // .active 클래스 추가
-      observer.disconnect(); // 원하는 요소를 찾았으므로 감시 중지
-    }
+function checkForElement() {
+  const className = headNav.querySelector(`.${currentFileName}`); // currentFileName 클래스 선택
+  console.log(className);
+  if (className) {
+    addActive(className); // .active 클래스 추가
     console.log("현재 파일명:", className);
-  });
+  } else {
+    // 아직 해당 요소가 없으면 다시 시도
+    console.log("요소를 찾지 못했습니다. 다시 시도합니다.");
+    setTimeout(checkForElement, 100); // 100ms 후에 다시 확인
+  }
+}
 
-  // header 내의 변화를 감지
-  observer.observe(head, { childList: true, subtree: true });
-
-  console.log("로드됨");
-});
+// DOM 로드 후 처음 확인
+checkForElement();
