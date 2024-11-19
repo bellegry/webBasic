@@ -27,11 +27,23 @@ async function loadHTML(url, selector) {
   }
 }
 
+// 기존 동적으로 로드된 스크립트를 제거하는 함수
+function removeDynamicScript() {
+  const dynamicScript = document.getElementById("dynamic-script");
+  if (dynamicScript) {
+    console.log("기존 스크립트 제거:", dynamicScript.src);
+    dynamicScript.remove();
+  }
+}
+
 // JavaScript 파일을 로드하는 함수
 function loadScript(src) {
   return new Promise((resolve, reject) => {
+    removeDynamicScript(); // 기존 동적 스크립트 제거
+
     const script = document.createElement("script");
-    script.src = src;
+    script.id = "dynamic-script"; // 동적 스크립트의 고유 ID
+    script.src = `${src}?t=${Date.now()}`; // 캐시 방지
     script.type = "module";
     script.defer = true; // 이 부분은 DOM 삽입 후 실행을 보장하기 위해 사용
     script.onload = () => {

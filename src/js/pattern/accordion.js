@@ -1,6 +1,6 @@
 "use strict";
 
-class Accordion {
+export class Accordion {
   constructor(domNode) {
     this.rootEl = domNode;
     this.buttonEl = this.rootEl.querySelector("button[aria-expanded]");
