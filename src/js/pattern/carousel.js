@@ -1,10 +1,10 @@
 "use strict";
 
 var CarouselPreviousNext = function (node, options) {
-  // merge passed options with defaults
+  // 전달된 옵션을 기본값과 병합
   options = Object.assign({ moreaccessible: false, paused: false, norotate: false }, options || {});
 
-  // a prefers-reduced-motion user setting must always override autoplay
+  // Prefers-Reduced-Motion 사용자 설정은 항상 자동 재생보다 우선 적용
   var hasReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   if (hasReducedMotion.matches) {
     options.paused = true;
@@ -25,15 +25,14 @@ var CarouselPreviousNext = function (node, options) {
   this.pauseLabel = "Stop automatic slide show";
 
   /* State properties */
-  this.hasUserActivatedPlay = false; // set when the user activates the play/pause button
-  this.isAutoRotationDisabled = options.norotate; // This property for disabling auto rotation
-  this.isPlayingEnabled = !options.paused; // This property is also set in updatePlaying method
-  this.timeInterval = 5000; // length of slide rotation in ms
-  this.currentIndex = 0; // index of current slide
-  this.slideTimeout = null; // save reference to setTimeout
+  this.hasUserActivatedPlay = false; // 사용자가 재생/일시 정지 버튼을 활성화할 때 설정됩니다.
+  this.isAutoRotationDisabled = options.norotate; // 자동 회전을 비활성화하는 속성입니다.
+  this.isPlayingEnabled = !options.paused; // 이 속성은 updatePlaying 메소드에도 설정됩니다.
+  this.timeInterval = 5000; // 슬라이드 회전 길이(ms)
+  this.currentIndex = 0; // 현재 슬라이드의 인덱스
+  this.slideTimeout = null; // setTimeout에 대한 참조 저장
 
   // Pause Button
-
   var elem = document.querySelector(".carousel .controls button.rotation");
   if (elem) {
     this.pausePlayButtonNode = elem;
@@ -41,7 +40,6 @@ var CarouselPreviousNext = function (node, options) {
   }
 
   // Previous Button
-
   elem = document.querySelector(".carousel .controls button.previous");
   if (elem) {
     this.previousButtonNode = elem;
@@ -51,7 +49,6 @@ var CarouselPreviousNext = function (node, options) {
   }
 
   // Next Button
-
   elem = document.querySelector(".carousel .controls button.next");
   if (elem) {
     this.nextButtonNode = elem;
@@ -61,11 +58,10 @@ var CarouselPreviousNext = function (node, options) {
   }
 
   // Carousel item events
-
   for (var i = 0; i < this.carouselItemNodes.length; i++) {
     var carouselItemNode = this.carouselItemNodes[i];
 
-    // support stopping rotation when any element receives focus in the tabpanel
+    // 탭 패널에서 요소가 포커스를 받으면 회전 중지를 지원합니다.
     carouselItemNode.addEventListener("focusin", this.handleFocusIn.bind(this));
     carouselItemNode.addEventListener("focusout", this.handleFocusOut.bind(this));
 
@@ -81,21 +77,20 @@ var CarouselPreviousNext = function (node, options) {
   this.domNode.addEventListener("mouseover", this.handleMouseOver.bind(this));
   this.domNode.addEventListener("mouseout", this.handleMouseOut.bind(this));
 
-  // initialize behavior based on options
-
+  // 옵션에 따라 동작 초기화
   this.enableOrDisableAutoRotation(options.norotate);
   this.updatePlaying(!options.paused && !options.norotate);
   this.setAccessibleStyling(options.moreaccessible);
   this.rotateSlides();
 };
 
-/* Public function to disable/enable rotation and if false, hide pause/play button*/
+/* 회전을 비활성화/활성화하고 거짓인 경우 일시 정지/재생 버튼을 숨기는 공개 기능 */
 CarouselPreviousNext.prototype.enableOrDisableAutoRotation = function (disable) {
   this.isAutoRotationDisabled = disable;
   this.pausePlayButtonNode.hidden = disable;
 };
 
-/* Public function to update controls/caption styling */
+/* 컨트롤/캡션 스타일을 업데이트하는 공개 기능 */
 CarouselPreviousNext.prototype.setAccessibleStyling = function (accessible) {
   if (accessible) {
     this.domNode.classList.add("carousel-moreaccessible");
@@ -160,7 +155,6 @@ CarouselPreviousNext.prototype.updatePlaying = function (play) {
 };
 
 /* Event Handlers */
-
 CarouselPreviousNext.prototype.handleImageLinkFocus = function () {
   this.liveRegionNode.classList.add("focus");
 };
@@ -180,8 +174,8 @@ CarouselPreviousNext.prototype.handleMouseOut = function () {
 };
 
 /* EVENT HANDLERS */
-
 CarouselPreviousNext.prototype.handlePausePlayButtonClick = function () {
+  console.log("되는지 확인");
   this.hasUserActivatedPlay = !this.isPlayingEnabled;
   this.updatePlaying(!this.isPlayingEnabled);
 };
@@ -194,8 +188,7 @@ CarouselPreviousNext.prototype.handleNextButtonClick = function () {
   this.nextCarouselItem();
 };
 
-/* Event Handlers for carousel items*/
-
+/* Event Handlers for carousel items */
 CarouselPreviousNext.prototype.handleFocusIn = function () {
   this.liveRegionNode.setAttribute("aria-live", "polite");
   this.hasFocus = true;
@@ -208,24 +201,23 @@ CarouselPreviousNext.prototype.handleFocusOut = function () {
   this.hasFocus = false;
 };
 
-/* Initialize Carousel and options */
-
+/* Initialize(초기화) Carousel and options */
 window.addEventListener(
   "load",
   function () {
     var carouselEls = document.querySelectorAll(".carousel");
     var carousels = [];
 
-    // set example behavior based on
-    // default setting of the checkboxes and the parameters in the URL
-    // update checkboxes based on any corresponding URL parameters
+    // 다음을 기반으로 예제 동작 설정
+    // URL의 확인란 및 매개변수의 기본 설정
+    // 해당 URL 매개변수를 기반으로 확인란을 업데이트합니다.
     var checkboxes = document.querySelectorAll(".carousel-options input[type=checkbox]");
     var urlParams = new URLSearchParams(location.search);
     var carouselOptions = {};
 
-    // initialize example features based on
-    // default setting of the checkboxes and the parameters in the URL
-    // update checkboxes based on any corresponding URL parameters
+    // 다음을 기반으로 예제 기능을 초기화합니다.
+    // URL의 확인란 및 매개변수의 기본 설정
+    // 해당 URL 매개변수를 기반으로 확인란을 업데이트합니다.
     checkboxes.forEach(function (checkbox) {
       var checked = checkbox.checked;
 
@@ -256,7 +248,7 @@ window.addEventListener(
           break;
       }
 
-      // update the carousel behavior and URL when a checkbox state changes
+      // 체크박스 상태가 변경되면 캐러셀 동작과 URL을 업데이트합니다.
       checkbox.addEventListener("change", function (event) {
         urlParams.set(event.target.value, event.target.checked + "");
         window.history.replaceState(null, "", window.location.pathname + "?" + urlParams);

@@ -164,13 +164,16 @@ img.reload {
 }
 
 .carousel .controls .pause i .pause {
-  color: white;
-  stroke: white;
+  display: transparent;
 }
 
 .carousel .controls .play i .play {
+  display: transparent;
+}
+
+.carousel .controls i {
   color: white;
-  stroke: white;
+  display: block;
 }
 
 .carousel .controls button:focus i,
