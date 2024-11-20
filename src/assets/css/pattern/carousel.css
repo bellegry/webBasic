@@ -1,45 +1,37 @@
 /* .carousel */
-
 img.reload {
   padding: 0.25em;
   display: block-inline;
-  position: relative;
   top: 6px;
   height: 0.9em;
 }
 
 .carousel {
-  background-color: #eee;
-  max-width: 900px;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .carousel .carousel-inner {
+}
+
+.carousel-item {
   position: relative;
-}
-
-.carousel .carousel-items.focus {
-  padding: 2px;
-  border: solid 3px #005a9c;
-}
-
-.carousel .carousel-item {
   display: none;
-  max-height: 400px;
-  max-width: 900px;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
-.carousel .carousel-item.active {
+.carousel-item.active {
   display: block;
+  opacity: 1;
 }
 
 /* More like bootstrap, less accessible */
 
 .carousel .carousel-item .carousel-image a img {
-  height: 100%;
   width: 100%;
+  height: 100%;
 }
 
 .carousel .carousel-item .carousel-caption a {
@@ -51,12 +43,14 @@ img.reload {
 
 .carousel .carousel-item .carousel-caption a,
 .carousel .carousel-item .carousel-caption span.contrast {
+  position: absolute;
   display: inline-block;
+  top: 0;
+  text-align: center;
   margin: 0;
   padding: 6px;
   background-color: rgb(0 0 0 / 65%);
   border-radius: 5px;
-  border: 0 solid transparent;
 }
 
 .carousel-moreaccessible .carousel-items .carousel-image a {
@@ -103,7 +97,6 @@ img.reload {
 }
 
 .carousel .carousel-item .carousel-caption {
-  position: absolute;
   right: 15%;
   bottom: 0;
   left: 15%;
@@ -116,76 +109,65 @@ img.reload {
 /* Shared CSS for Pause, Previous and Next Buttons */
 
 .carousel .controls {
-  box-sizing: border-box;
   position: absolute;
-  top: 1em;
+  align-items: center;
   z-index: 10;
-  display: flex;
   width: 100%;
-  padding: 0.25em 1.25em 0;
+  .arrow_btn {
+    color: var(--color-white);
+    position: absolute;
+    width: 100%;
+    top: 160px;
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+  }
 }
 
 .carousel .controls button {
-  position: absolute;
   z-index: 10;
   flex: 0 0 auto;
-  margin: 0;
-  padding: 0;
-  border: none;
-  background: transparent;
-  outline: none;
 }
 
 .carousel .controls button.previous {
-  right: 70px;
 }
 
 .carousel .controls button.next {
-  right: 18px;
 }
 
-/* i Controls */
-.carousel .controls i .border {
+/* span Controls */
+.carousel .controls .rotation {
   color: transparent;
-  stroke: transparent;
-  stroke-width: 2px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: end;
+  span {
+    position: absolute;
+  }
 }
 
-.carousel .controls i .pause {
-  stroke-width: 4;
+.carousel .controls .pause > .play {
   color: transparent;
-  stroke: transparent;
 }
 
-.carousel .controls i .play {
-  stroke-width: 1;
+.carousel .controls .play > .pause {
   color: transparent;
-  stroke: transparent;
 }
 
-.carousel .controls .pause i .pause {
-  display: transparent;
+.carousel .controls .pause > .pause {
+  color: var(--color-white);
 }
 
-.carousel .controls .play i .play {
-  display: transparent;
+.carousel .controls .play > .play {
+  color: var(--color-white);
 }
 
-.carousel .controls i {
-  color: white;
-  display: block;
-}
-
-.carousel .controls button:focus i,
-.carousel .controls button:hover i,
-.carousel .controls button:hover i {
-  color: #005a9c;
-  stroke: #005a9c;
-  opacity: 1;
-}
-
-.carousel .controls button:focus i .border {
-  stroke: white;
+.carousel .controls button:focus span,
+.carousel .controls button:hover span,
+.carousel .controls button:hover span {
+  color: var(--color-primary);
 }
 
 /* More accessible carousel styles, with caption and controls above/below image */
@@ -193,7 +175,6 @@ img.reload {
 .carousel-moreaccessible {
   padding: 0;
   margin: 0;
-  position: relative;
   border: #eee solid 4px;
   border-radius: 5px;
 }
@@ -201,7 +182,6 @@ img.reload {
 /* Shared CSS for Pause and Tab Controls */
 
 .carousel-moreaccessible .controls {
-  position: relative;
   top: 0;
   left: 0;
   padding: 0.25em 0.25em 0;

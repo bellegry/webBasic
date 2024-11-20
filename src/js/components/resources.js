@@ -17,6 +17,7 @@ export const resources = {
   carousel: {
     html: "./pattern/carousel.html",
     js: "../js/pattern/carousel.js",
+    // js: "../js/about.js",
     // JS 파일이 없는 경우 null 처리
   },
   accordion: {

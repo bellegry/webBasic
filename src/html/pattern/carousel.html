@@ -9,19 +9,21 @@
     <div class="controls">
       <!-- 재생 정지 버튼 -->
       <button type="button" class="rotation pause" aria-label="Stop automatic slide show">
-        <i class="pause material-icons">pause</i>
-        <i class="play material-icons">play</i>
+        <span class="pause material-icons">pause</span>
+        <span class="play material-icons">play_arrow</span>
       </button>
 
-      <!-- 슬라이드 < -->
-      <button type="button" class="previous" aria-controls="myCarousel-items" aria-label="Previous Slide">
-        <i class="material-icons">keyboard_arrow_left</i>
-      </button>
+      <div class="arrow_btn">
+        <!-- 버튼 < -->
+        <button type="button" class="previous" aria-controls="myCarousel-items" aria-label="Previous Slide">
+          <span class="material-icons">keyboard_arrow_left</span>
+        </button>
 
-      <!-- 슬라이드 > -->
-      <button type="button" class="next" aria-controls="myCarousel-items" aria-label="Next Slide">
-        <i class="material-icons">keyboard_arrow_right</i>
-      </button>
+        <!-- 버튼 > -->
+        <button type="button" class="next" aria-controls="myCarousel-items" aria-label="Next Slide">
+          <span class="material-icons">keyboard_arrow_right</span>
+        </button>
+      </div>
     </div>
     <!-- // 컨트롤 버튼 -->
 

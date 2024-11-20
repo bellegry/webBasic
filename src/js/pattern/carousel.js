@@ -1,5 +1,9 @@
 "use strict";
 
+// carousel 생성
+// paused: 자동재생 멈출지 여부
+// norotate: 자동재생 아예 꺼둘지
+// moreaccessible: 접근성을 높일지
 var CarouselPreviousNext = function (node, options) {
   // 전달된 옵션을 기본값과 병합
   options = Object.assign({ moreaccessible: false, paused: false, norotate: false }, options || {});
@@ -11,8 +15,8 @@ var CarouselPreviousNext = function (node, options) {
   }
 
   /* DOM properties */
+  // HTML 요소 기억 carouselItemNodes의 슬라이드들
   this.domNode = node;
-
   this.carouselItemNodes = node.querySelectorAll(".carousel-item");
 
   this.containerNode = node.querySelector(".carousel-items");
@@ -34,13 +38,15 @@ var CarouselPreviousNext = function (node, options) {
 
   // Pause Button
   var elem = document.querySelector(".carousel .controls button.rotation");
+  // pause 버튼에 관한 반응
   if (elem) {
     this.pausePlayButtonNode = elem;
     this.pausePlayButtonNode.addEventListener("click", this.handlePausePlayButtonClick.bind(this));
   }
 
   // Previous Button
-  elem = document.querySelector(".carousel .controls button.previous");
+  elem = document.querySelector(".carousel .carousel-inner .controls button.previous");
+  // prev 버튼에 관한 반응
   if (elem) {
     this.previousButtonNode = elem;
     this.previousButtonNode.addEventListener("click", this.handlePreviousButtonClick.bind(this));
@@ -50,6 +56,7 @@ var CarouselPreviousNext = function (node, options) {
 
   // Next Button
   elem = document.querySelector(".carousel .controls button.next");
+  // next 버튼에 관한 반응
   if (elem) {
     this.nextButtonNode = elem;
     this.nextButtonNode.addEventListener("click", this.handleNextButtonClick.bind(this));
@@ -99,6 +106,8 @@ CarouselPreviousNext.prototype.setAccessibleStyling = function (accessible) {
   }
 };
 
+// 슬라이드 보여주는 방법
+// active class로 조절
 CarouselPreviousNext.prototype.showCarouselItem = function (index) {
   this.currentIndex = index;
 
@@ -202,64 +211,62 @@ CarouselPreviousNext.prototype.handleFocusOut = function () {
 };
 
 /* Initialize(초기화) Carousel and options */
-window.addEventListener(
-  "load",
-  function () {
-    var carouselEls = document.querySelectorAll(".carousel");
-    var carousels = [];
+const load = () => {
+  var carouselEls = document.querySelectorAll(".carousel");
+  var carousels = [];
 
-    // 다음을 기반으로 예제 동작 설정
-    // URL의 확인란 및 매개변수의 기본 설정
-    // 해당 URL 매개변수를 기반으로 확인란을 업데이트합니다.
-    var checkboxes = document.querySelectorAll(".carousel-options input[type=checkbox]");
-    var urlParams = new URLSearchParams(location.search);
-    var carouselOptions = {};
+  // 다음을 기반으로 예제 동작 설정
+  // URL의 확인란 및 매개변수의 기본 설정
+  // 해당 URL 매개변수를 기반으로 확인란을 업데이트합니다.
+  var checkboxes = document.querySelectorAll(".carousel-options input[type=checkbox]");
+  var urlParams = new URLSearchParams(location.search);
+  var carouselOptions = {};
 
-    // 다음을 기반으로 예제 기능을 초기화합니다.
-    // URL의 확인란 및 매개변수의 기본 설정
-    // 해당 URL 매개변수를 기반으로 확인란을 업데이트합니다.
-    checkboxes.forEach(function (checkbox) {
-      var checked = checkbox.checked;
+  // 다음을 기반으로 예제 기능을 초기화합니다.
+  // URL의 확인란 및 매개변수의 기본 설정
+  // 해당 URL 매개변수를 기반으로 확인란을 업데이트합니다.
+  checkboxes.forEach(function (checkbox) {
+    var checked = checkbox.checked;
 
-      if (urlParams.has(checkbox.value)) {
-        var urlParam = urlParams.get(checkbox.value);
-        if (typeof urlParam === "string") {
-          checked = urlParam === "true";
-          checkbox.checked = checked;
-        }
+    if (urlParams.has(checkbox.value)) {
+      var urlParam = urlParams.get(checkbox.value);
+      if (typeof urlParam === "string") {
+        checked = urlParam === "true";
+        checkbox.checked = checked;
       }
+    }
 
-      carouselOptions[checkbox.value] = checkbox.checked;
-    });
+    carouselOptions[checkbox.value] = checkbox.checked;
+  });
 
-    carouselEls.forEach(function (node) {
-      carousels.push(new CarouselPreviousNext(node, carouselOptions));
-    });
+  carouselEls.forEach(function (node) {
+    carousels.push(new CarouselPreviousNext(node, carouselOptions));
+  });
 
-    // add change event to checkboxes
-    checkboxes.forEach(function (checkbox) {
-      var updateEvent;
-      switch (checkbox.value) {
-        case "moreaccessible":
-          updateEvent = "setAccessibleStyling";
-          break;
-        case "norotate":
-          updateEvent = "enableOrDisableAutoRotation";
-          break;
+  // add change event to checkboxes
+  checkboxes.forEach(function (checkbox) {
+    var updateEvent;
+    switch (checkbox.value) {
+      case "moreaccessible":
+        updateEvent = "setAccessibleStyling";
+        break;
+      case "norotate":
+        updateEvent = "enableOrDisableAutoRotation";
+        break;
+    }
+
+    // 체크박스 상태가 변경되면 캐러셀 동작과 URL을 업데이트합니다.
+    checkbox.addEventListener("change", function (event) {
+      urlParams.set(event.target.value, event.target.checked + "");
+      window.history.replaceState(null, "", window.location.pathname + "?" + urlParams);
+
+      if (updateEvent) {
+        carousels.forEach(function (carousel) {
+          carousel[updateEvent](event.target.checked);
+        });
       }
-
-      // 체크박스 상태가 변경되면 캐러셀 동작과 URL을 업데이트합니다.
-      checkbox.addEventListener("change", function (event) {
-        urlParams.set(event.target.value, event.target.checked + "");
-        window.history.replaceState(null, "", window.location.pathname + "?" + urlParams);
-
-        if (updateEvent) {
-          carousels.forEach(function (carousel) {
-            carousel[updateEvent](event.target.checked);
-          });
-        }
-      });
     });
-  },
-  false
-);
+  });
+};
+
+load();
