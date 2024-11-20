@@ -21,13 +21,18 @@ h1 {
 }
 h2 {
   font-weight: var(--font-weight-extraBold);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-xxl);
 }
 h3 {
   font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-l);
+  font-size: var(--font-size-xl);
 }
 h4 {
   font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-ml);
+  font-size: var(--font-size-l);
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
 }

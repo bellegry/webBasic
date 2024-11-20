@@ -46,3 +46,28 @@ nextBtn.addEventListener("click", () => {
     updateActive(prevEl);
   }
 });
+
+// scroll fixed
+window.addEventListener("scroll", () => {
+  console.log(window.scrollY);
+  const header = document.querySelector("header");
+  const snb = document.querySelector(".snb");
+  const snbDisplay = window.getComputedStyle(snb).display;
+  if (snbDisplay === "none") {
+    if (window.scrollY > 0) {
+      header.classList.add("fixed");
+    } else {
+      header.classList.remove("fixed");
+    }
+  } else {
+    if (window.scrollY > 0) {
+      header.classList.add("fixed");
+      snb.classList.add("fixed");
+      snb.style.top = "70px";
+    } else {
+      header.classList.remove("fixed");
+      snb.classList.remove("fixed");
+      snb.style.top = "0";
+    }
+  }
+});
