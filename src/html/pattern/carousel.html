@@ -5,66 +5,8 @@
 <!-- Carousel contents -->
 <section id="myCarousel" class="carousel" aria-roledescription="carousel" aria-label="Main Slide">
   <div class="carousel-inner">
-    <!-- 컨트롤 버튼 -->
-    <div class="controls">
-      <!-- 재생 정지 버튼 -->
-      <button type="button" class="rotation pause" aria-label="Stop automatic slide show">
-        <span class="pause material-icons">pause</span>
-        <span class="play material-icons">play_arrow</span>
-      </button>
-
-      <div class="arrow_btn">
-        <!-- 버튼 < -->
-        <button type="button" class="previous" aria-controls="myCarousel-items" aria-label="Previous Slide">
-          <span class="material-icons">keyboard_arrow_left</span>
-        </button>
-
-        <!-- 버튼 > -->
-        <button type="button" class="next" aria-controls="myCarousel-items" aria-label="Next Slide">
-          <span class="material-icons">keyboard_arrow_right</span>
-        </button>
-      </div>
-    </div>
-    <!-- // 컨트롤 버튼 -->
-
     <div id="myCarousel-items" class="carousel-items" aria-live="off">
-      <div class="carousel-item active" role="group" aria-roledescription="slide" aria-label="1 of 6">
-        <div class="carousel-image">
-          <a href="#">
-            <img src="https://img.freepik.com/premium-photo/hand-drawn-abstract-background-design_481527-39932.jpg" alt="Walking Tour in Amsterdam" />
-          </a>
-        </div>
-
-        <div class="carousel-caption">
-          <h3>
-            <a href="#" id="carousel-label-1"> slide 1 </a>
-          </h3>
-
-          <div class="hidden-xs hidden-sm">
-            <p><span class="contrast">contents</span></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="2 of 6">
-        <div class="carousel-image">
-          <a href="#">
-            <img src="https://img.freepik.com/premium-photo/hand-drawn-abstract-background-design_481527-39839.jpg" alt="Land's End in Cornwall" />
-          </a>
-        </div>
-
-        <div class="carousel-caption">
-          <h3>
-            <a href="#" id="carousel-label-2"> slide 2 </a>
-          </h3>
-
-          <div>
-            <p><span class="contrast">content</span></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="3 of 6">
+      <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="1 of 4">
         <div class="carousel-image">
           <a href="#">
             <img
@@ -76,7 +18,7 @@
 
         <div class="carousel-caption">
           <h3>
-            <a href="#" id="carousel-label-3"> slide3 </a>
+            <a href="#" id="carousel-label-3"> Slide 1 </a>
           </h3>
 
           <div>
@@ -85,7 +27,7 @@
         </div>
       </div>
 
-      <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="4 of 6">
+      <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="2 of 4">
         <div class="carousel-image">
           <a href="#">
             <img
@@ -97,7 +39,7 @@
 
         <div class="carousel-caption">
           <h3>
-            <a href="#" id="carousel-label-4"> Slide4 </a>
+            <a href="#" id="carousel-label-4"> Slide 2 </a>
           </h3>
 
           <div>
@@ -106,7 +48,7 @@
         </div>
       </div>
 
-      <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="5 of 6">
+      <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="3 of 4">
         <div class="carousel-image">
           <a href="#">
             <img
@@ -118,14 +60,16 @@
 
         <div class="carousel-caption">
           <h3>
-            <a href="#" id="carousel-label-5"> Slide5 </a>
+            <a href="#" id="carousel-label-5"> Slide 3 </a>
           </h3>
 
-          <div></div>
+          <div>
+            <p><span class="contrast">ddd</span></p>
+          </div>
         </div>
       </div>
 
-      <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="6 of 6">
+      <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="4 of 4">
         <div class="carousel-image">
           <a href="#">
             <img src="https://img.freepik.com/free-photo/abstract-pastel-brushstroke-white_53876-124521.jpg" alt="Mid-American Gardener panelists on the set" />
@@ -134,7 +78,7 @@
 
         <div class="carousel-caption">
           <h3>
-            <a href="#" id="carousel-label-6"> slide6 </a>
+            <a href="#" id="carousel-label-6"> Slide 4 </a>
           </h3>
 
           <div class="hidden-xs hidden-sm">
@@ -143,6 +87,26 @@
         </div>
       </div>
     </div>
+    <!-- 컨트롤 버튼 -->
+    <div class="controls">
+      <div class="arrow_btn">
+        <!-- < -->
+        <button type="button" class="previous" aria-controls="myCarousel-items" aria-label="Previous Slide">
+          <span class="material-icons">keyboard_arrow_left</span>
+        </button>
+        <!-- > -->
+        <button type="button" class="next" aria-controls="myCarousel-items" aria-label="Next Slide">
+          <span class="material-icons">keyboard_arrow_right</span>
+        </button>
+      </div>
+      <!-- 재생 정지 버튼 -->
+      <button type="button" class="rotation pause" aria-label="Stop automatic slide show">
+        <span class="pause material-icons">pause</span>
+        <span class="play material-icons">play_arrow</span>
+      </button>
+      <!-- // 재생 정지 버튼 -->
+    </div>
+    <!-- // 컨트롤 버튼 -->
   </div>
 </section>
 

@@ -86,3 +86,18 @@
   --spacing-6: 0.6rem;
   --spacing-4: 0.4rem;
 }
+
+/* 애니메이션 정의 */
+@keyframes fadeInOut {
+  0% {
+    opacity: 1; /* 보임 */
+  }
+  50% {
+    opacity: 0; /* 중간에 투명해짐 */
+    visibility: hidden; /* 보이지 않도록 처리 */
+  }
+  100% {
+    opacity: 1; /* 다시 보임 */
+    visibility: visible;
+  }
+}
