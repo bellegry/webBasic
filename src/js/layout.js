@@ -12,6 +12,11 @@ export const addActive = (el) => {
   el.classList.add("active");
 };
 
+// toggle 추가 함수
+export const toggleActive = (el) => {
+  el.classList.toggle("active");
+};
+
 // HTML을 로드하고 DOM에 삽입하는 함수
 async function loadHTML(url, selector) {
   try {

@@ -1,4 +1,4 @@
-import { addActive } from "../layout.js";
+import { addActive, toggleActive } from "../layout.js";
 
 // URL에서 파일명을 추출하는 함수
 function getPath() {
@@ -28,3 +28,9 @@ function checkForElement() {
 
 // DOM 로드 후 처음 확인
 checkForElement();
+
+// mobild menu toggle
+const menuIcon = headNav.querySelector("button.material-icons");
+menuIcon.addEventListener("click", () => {
+  toggleActive(headNav.querySelector("ul"));
+});
