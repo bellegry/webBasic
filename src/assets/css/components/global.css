@@ -10,7 +10,6 @@ html {
       width: 100%;
       max-width: 1200px;
       min-height: calc(100vh - (70px + 120px + 2px));
-      padding: var(--spacing-30);
     }
   }
 }
@@ -35,4 +34,16 @@ h4 {
 .fixed {
   position: fixed;
   top: 0;
+}
+
+/* Extra small devices (phones, 576px and down) */
+@media only screen and (max-width: 576px) {
+  html {
+    font-size: 50%;
+    body {
+      main {
+        padding: var(--spacing-10);
+      }
+    }
+  }
 }

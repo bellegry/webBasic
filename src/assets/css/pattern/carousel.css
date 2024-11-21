@@ -44,7 +44,7 @@
       .arrow_btn {
         position: absolute;
         width: 100%;
-        padding: var(--spacing-30);
+        padding: 2%;
         z-index: 1;
         display: flex;
         justify-content: space-between;
@@ -65,7 +65,7 @@
         position: absolute;
         z-index: 1;
         color: var(--color-white);
-        bottom: 10px;
+        bottom: 1%;
         left: 50%;
         transform: translate(-50%, -50%);
         span {
