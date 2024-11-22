@@ -1,9 +1,25 @@
 header {
   width: 100%;
+
+  /* (기본필수) flex container 생성 */
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
+
+  /* [정렬] space-between */
+  -webkit-box-pack: justify;
+  -moz-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  height: 70px;
+
+  /* [정렬] 교차축 - 가운데 기준 */
+  -webkit-box-align: center;
+  -moz-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
+
+  height: 70px;
   padding: var(--spacing-16);
   background-color: var(--color-primary);
   z-index: 999;
@@ -17,7 +33,12 @@ header {
       display: none;
     }
     ul {
+      /* (기본필수) flex container 생성 */
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
       display: flex;
+
       gap: var(--spacing-10);
       li a {
         padding: var(--spacing-6);
@@ -52,8 +73,18 @@ footer {
     padding: var(--spacing-30);
     width: 100%;
     ul {
+      /* (기본필수) flex container 생성 */
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
       display: flex;
+
+      /* [정렬] 주축 - 가운데 기준 */
+      -webkit-box-pack: center;
+      -moz-box-justify-content: center;
+      -ms-flex-pack: center;
       justify-content: center;
+
       gap: var(--spacing-20);
       li {
         color: var(--color-primary-semiLight);
