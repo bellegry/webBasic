@@ -55,6 +55,11 @@ header {
   }
 }
 
+header h1 {
+  color: var(--color-white);
+  padding: 0 var(--spacing-10);
+}
+
 .snb {
   display: none;
   z-index: 999;
