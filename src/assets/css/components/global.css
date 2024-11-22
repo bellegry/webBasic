@@ -10,6 +10,7 @@ html {
       width: 100%;
       max-width: 1200px;
       min-height: calc(100vh - (70px + 120px + 2px));
+      padding: var(--spacing-10);
     }
   }
 }
@@ -42,7 +43,6 @@ h4 {
     font-size: 50%;
     body {
       main {
-        padding: var(--spacing-10);
       }
     }
   }

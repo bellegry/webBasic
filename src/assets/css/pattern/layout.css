@@ -7,16 +7,25 @@
   border-bottom: 1px solid var(--color-gray-200);
   nav {
     width: calc(100% - 140px);
-    overflow: hidden;
+    position: relative;
+    overflow-x: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 및 Edge */
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Edge */
+    }
     ul {
       display: flex;
       align-items: center;
       height: 60px;
+      transition: transform 0.3s ease-in-out;
       li {
         align-items: center;
         height: 100%;
         line-height: 60px;
         padding: 0 var(--spacing-30);
+        white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+        cursor: pointer;
         &:hover,
         &.active {
           color: var(--color-primary);
@@ -56,6 +65,7 @@ main {
 @media only screen and (max-width: 576px) {
   .snb {
     nav {
+      width: calc(100% - 100px);
       ul {
         display: flex;
         align-items: center;

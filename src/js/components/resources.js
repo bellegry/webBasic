@@ -28,6 +28,10 @@ export const resources = {
     html: "./pattern/alert.html",
     js: "../js/pattern/alert.js",
   },
+  dialog: {
+    html: "./pattern/dialog.html",
+    js: "../js/pattern/dialog.js",
+  },
   table: {
     html: "./pattern/table.html",
     js: "../js/pattern/table.js",
