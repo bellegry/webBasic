@@ -6,7 +6,7 @@
   align-items: center;
   border-bottom: 1px solid var(--color-gray-200);
   nav {
-    width: calc(100% - 140px);
+    width: calc(100% - 120px);
     position: relative;
     overflow-x: scroll;
     scrollbar-width: none; /* Firefox */
@@ -44,10 +44,16 @@
       width: 60px;
       height: 100%;
       border-left: 1px solid var(--color-gray-200);
+      border-radius: 0;
+      background: none;
       color: var(--color-gray-600);
+      &:hover {
+        color: var(--color-primary);
+      }
     }
   }
 }
+
 main {
   min-height: calc(100vh - (70px + 60px + 120px + 2px)) !important;
   .patterns {

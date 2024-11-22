@@ -2,11 +2,19 @@
 :root {
   /* primary */
   --color-primary: #4265ed;
-  --color-primary-medium: #3554cc;
+  --color-primary-medium: #3048a9;
   --color-primary-dark: #1e2c65;
   --color-primary-light: #f6f9fc;
   --color-primary-semiLight: #8cadff;
   --color-primary-semi: #e1eaff;
+
+  /* secondary */
+  --color-secondary: #ff2266;
+  --color-secondary-medium: #cb164e;
+  --color-secondary-dark: #970935;
+  --color-secondary-light: #fff5f8;
+  --color-secondary-semiLight: #ffb8cc;
+  --color-secondary-semi: #ffeaf0;
 
   /* gray */
   --color-gray-100: #f7f7f7;
@@ -65,13 +73,13 @@
 
   /* radius */
   --radius-fill: 80rem;
-  --radius-xxl: 3.2rem;
-  --radius-xl: 1.6rem;
-  --radius-l: 1.2rem;
-  --radius-m: 1rem;
-  --radius-s: 0.8rem;
-  --radius-xs: 0.6rem;
-  --radius-xxs: 0.4rem;
+  --radius-30: 3rem;
+  --radius-16: 1.6rem;
+  --radius-12: 1.2rem;
+  --radius-10: 1rem;
+  --radius-8: 0.8rem;
+  --radius-6: 0.6rem;
+  --radius-4: 0.4rem;
 
   /* spacing */
   --spacing-34: 3.4rem;

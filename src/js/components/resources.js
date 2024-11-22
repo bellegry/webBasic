@@ -32,9 +32,13 @@ export const resources = {
     html: "./pattern/dialog.html",
     js: "../js/pattern/dialog.js",
   },
+  button: {
+    html: "./pattern/button.html",
+    js: "../js/pattern/button.js",
+  },
   table: {
     html: "./pattern/table.html",
     js: "../js/pattern/table.js",
-    // JS 파일이 없는 경우 null 처리
   },
 };
+// JS 파일이 없는 경우 null 처리

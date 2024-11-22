@@ -5,6 +5,9 @@ html {
   color: var(--color-gray-800);
   body {
     font-size: var(--font-size-m);
+    .placeholder {
+      height: 0;
+    }
     main {
       margin: 0 auto;
       width: 100%;
@@ -35,6 +38,8 @@ h4 {
 .fixed {
   position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
 }
 
 /* Extra small devices (phones, 576px and down) */
